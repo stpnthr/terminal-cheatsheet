@@ -50,8 +50,6 @@ Leader key = **Space**. `<leader>x` means: press Space, release, then press `x`.
 | `ciw` | Change a word (delete + insert) |
 | `u` / `Ctrl+r` | Undo / redo |
 
-**Cut** isn't separate — `d` (delete) doubles as cut, since deleted text goes into a register you can `p` (paste) back.
-
 ## Change Operators (delete + insert in one move)
 
 `c` = "change": deletes text and drops you straight into Insert mode, instead of `d` then `i` as two steps.
@@ -98,6 +96,15 @@ Powered by `mini.surround`, built into LazyVim.
 
 Example: wrap `test` in `<div>` — select it (`viw`), then `gsa` → `t` → type `div` → Enter.
 
+## Finding & Replacing 
+
+Start by selecting the section you want to replace within, or if it's within the whole file don't do so.
+
+| Key | Action |
+|---|---|
+| `:%s/old/new/g` | Within a selection (or within whole page), find old and replace with new. Add `gc` instead of `g` if you want to check each replacement first. `gi` for anything case-sensitive. |
+| `:s/old/new/` | If it's just within a line. |
+
 ## Saving & Quitting
 
 | Command | Action |
@@ -105,7 +112,6 @@ Example: wrap `test` in `<div>` — select it (`viw`), then `gsa` → `t` → ty
 | `:w` | Save |
 | `:q` | Quit |
 | `:wq` | Save and quit |
-| `<leader>w` | Quick save (LazyVim shortcut) |
 
 ---
 
